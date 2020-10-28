@@ -1,150 +1,129 @@
+// console.log("in js file")
 
-var a = "a" // redeclare, does hoisting, can be reassigned
-let b = "b" /* can't be redclared, no hoisting must be declared before use,can be reassigned  */
-const c = "c" // can't be redclared, no hoisting must be declared before use, can't be reassigned
+var a = "a" // redeclare, has hoisting, never use it
+const b = "b" //no redeclare, you can't change the value of this.
+let c = "c" // no redeclare, you can change the value of this.
 
-// b = "z"
-// c = "z"
-
-/* 
-multiline 
-comment 
-*/
-
-// single line comment
-
-// String Interpolation
-
-// const greeting = `${h} `
+ c = "z"
+// let c = "z"
 
 
 
-// function hello(){
-//     console.log(greeting)
-// }
- 
-// const hello = function(name = "Alex"){
-//     return (greeting + name + "!")
+//function declration also get hoisted
+// function greeting(name="World"){
+//   let c = "world"  //block scoping
+//   return (`Hello ${name}!`)
 // }
 
-// const hello = name => greeting + name + "!"
-    
-// console.log(hello("Taylor"))
 
-// const alex= hello()
+
+const greeting2 = function(){
+  return (`Hello World!`)
+}
+
+// let greeting2 = function(name){
+//   return (`Hello ${name}!`)
+// }
+
+const greeting3 = () => (`Hello World!`)
+
+// greeting4(name) =>(`Hello ${name}!`)
+
+console.log(greeting3())
+
 // debugger
 
-// Primative Data Types: (immutable & compared by value)
-// - number
-// - String
-// - undefined
+/*
+multi
+line
+comment
+*/
+
+// DataTypes
+//primative datatypes
+// - strings
+// - numbers
+// - undedined
 // - null
-// - Symbol
 // - boolean
+// - Symbol
 
-const h = "hello"
-const hi = "hello"
-h[0] = "H"
+//Object
+// - Object
+// -function
+// - array 
 
-// console.log(h === hi)
 
-const arr = ["H", "e", "l", "l","o"]
-const arr2 = ["H", "e", "l", "l","o"]
-// arr[1] = "E"
-// console.log(arr)
-// console.log(arr === arr2)
+// const cat = "cat"
+// const cat2 = "cat"
 
-// Object Datatypes
-// - Function
-// - Array
-// - Objects
+// const zero = [1,2,3]
+// const zero2 = [1,2,3]
 
-// falsy
-// false
-// undefined
-// null
-// 0
-// ""
-// NaN
+// conditionals
 
 // for (let i = 1; i <= 100; i++) {
-//     if (i % 3 == 0 && i % 5 == 0) {
+//   if (i % 3 == 0 && i % 5 == 0) {
+//       console.log("FizzBuzz");
+//   } else if (i % 3 == 0) {
+//       console.log("Fizz");
+//   } else if (i % 5 == 0) {
+//       console.log("Buzz");
+//   } else {
+//       console.log(i);
+//   }
+// }
+
+// for (var x = 0; x <= 20; x++) {
+//   switch (true) {
+//     case (x % 5 === 0 && x % 3 === 0):
 //         console.log("FizzBuzz");
-//     } else if (i % 3 == 0) {
+//         break;
+//     case x % 3 === 0:
 //         console.log("Fizz");
-//     } else if (i % 5 == 0) {
+//         break;
+//     case x % 5 === 0:
 //         console.log("Buzz");
-//     } else {
-//         console.log(i);
-//     }
+//         break;
+//     default:
+//         console.log(x);
+//         break;
+//   }
 // }
 
-// for (let i = 1; i <= 100; i++) {
-//     switch (true){
-//         case (i % 3 == 0 && i % 5 == 0):{
-//             console.log("FizzBuzz");
-//             break;
-//         }
-//         case (i % 3 == 0 ):{
-//             console.log("Fizz");
-//             break;
-//         }
-//         case (i % 5 == 0 ):{
-//             console.log("Buzz");
-//             break;
-//         }
-//         default:{
-//             console.log(i);
-//         }
-//     }
+// for (let x = 0; x <= 20; x++) {
+//   console.log(x)
 // }
 
-const nums = [1,2,3,4,5]
+const nums = [1,2,3,4,5,6,7,8,9]
 
-// destructive:
 
-// .push -> add an element to end of array 
-// .unshift -> add an element to front of array
-// .pop -> removes last element
-// .shift -> removes first element
-// .splice -> removes elements between specified indexes
+// for (let x = 0; x < nums.length; x++) {
+//   console.log(nums[x])
+// }
 
-const removed = nums.splice(1,3)
 
-// console.log(removed)
+// function cB(num){
+//   console.log(num)
+// }
 
-// non-destructive:
-  // We use the ... or spread operator in order to copy and paste elements of an existing array into a "new" array
+// const cB2 = num => console.log(num)
 
-  let array = ['hello']
-  let array2 = [...array, 'world']
-  let array3 = ['world', ...array]
-  // array is still ['hello']
-  // array2 is ['hello', 'world']
-  // array3 is ['world', 'hello']
+// function hello() {
+//  console.log("Hello World!")
+// }
 
-  let numberList = [0,1,2,3,4,5,6]
+// nums.forEach(hello)
 
-  // slice allows you to slice our a new array from an older array
-  numberList.slice(1, 5) // returns [1,2,3,4,5]
-  numberList // is still [0,1,2,3,4,5,6]
+const h1Tag = document.querySelector("h1")
 
-//   Objects in Javascript are similiar to hashes in ruby with key / value pairs. For example:
+// const cB = (e) => {
+//   debugger
+// }
 
-  let alex = {
-    name: "alex",
-    age: 21, 
-    profession: "Expert in finding 100 ways to not code something!"
-  }
-// However one added thing that javascript objects have that ruby hashes don't, are function definition values.
+document.addEventListener("keydown", function(e){
+  debugger
+})
 
-  let alex = {
-    name: "alex",
-    age: 21, 
-    profession: "Expert in finding 100 ways to not code something!",
-    description: function() {
-      console.log(`Hello my name is ${this.name}, i am ${this.age} years old, and my profession is ${this.profession}`)
-    }
-  }
-
-  alex.description() // logs Hello my name is Howard, i am 21 years old, and my profession is Expert in the wa
+// loose comparison ==
+// strict comparison === takes into account the data type for it be equal
